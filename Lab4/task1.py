@@ -2,7 +2,6 @@ import pandas as pd
 import numpy as np
 from scipy import stats
 
-# Попробуем прочитать загруженный файл для проверки содержимого и корректности данных
 file_path = 'cars93.csv'
 data = pd.read_csv(file_path)
 
