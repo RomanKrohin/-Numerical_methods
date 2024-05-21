@@ -1,6 +1,7 @@
 import pandas as pd
 import numpy as np
 from scipy import stats
+from numpy.polynomial.polynomial import Polynomial
 
 
 file_path = 'cars93.csv'
@@ -42,10 +43,6 @@ regression_result = stats.linregress(data['Horsepower'], data['Price'])
 
 print(regression_result)
 
-
-from numpy.polynomial.polynomial import Polynomial
-
-X_poly = np.vstack([np.ones(data['Horsepower'].shape), data['Horsepower'], data['Horsepower']**2]).T
 poly_model = Polynomial.fit(data['Horsepower'], data['Price'], 2)
 coefficients = poly_model.convert().coef
 print(coefficients)
